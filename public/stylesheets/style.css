@@ -1,0 +1,295 @@
+body{
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*Navigation*/
+nav{
+  background-color: #78a7b2;
+  height: 10rem;
+  border-bottom: 10px solid #d44530;
+  box-shadow: 1px 5px 5px #888888;
+}
+#time-sheet-button{
+  float: right;
+  background-color:#2c3441;
+  font-size: 30px;
+  display: block;
+  margin-top: 1.3em;
+  margin-right: 2em;
+  width: 8em;
+  height: 57px;
+}
+
+#log-out-button{
+  float:left;
+  background-color:#2c3441;
+  font-size: 30px;
+  display: block;
+  margin-top: 1.3em;
+  margin-left: 2em;
+  width: 8em;
+  height: 57px;
+}
+nav .brand-logo{
+  display: inline;
+  text-align: center;
+  margin-top: 0.2em;
+}
+
+
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+  line-height: 0px;
+}
+
+#wos-logo{
+margin-left: 140%;
+height: 2.5em;
+width: 12em;
+
+}
+
+/*********************
+Main
+*********************/
+
+#row-1{
+  margin-top: 2em;
+}
+
+#row-2{
+  margin-bottom: 3em;
+}
+
+.announcements{
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  height: 17em;
+  width: 30.33333%;
+  border: 2px solid black;
+  border-radius: 25px;
+  margin-left: 2.5em;
+  background-color: #2c3441;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+.announcements-div{
+  border-top:solid 10px #d44530;
+  background-color: white;
+  border-radius: 0px 0px 25px 25px;
+  height: 13em;
+
+}
+
+.announcements-title{
+  margin: 5px;
+  font-size: 30px;
+}
+
+.main-dashboard{
+  height:43em;
+}
+
+
+
+
+.student{
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  height: 17em;
+  width: 30.33333%;
+  margin-left: 1em;
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: #2c3441;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+.students-div{
+  border-top:solid 10px #d44530;
+  background-color: white;
+  border-radius: 0px 0px 25px 25px;
+  height: 13em;
+
+}
+
+.student-title{
+  margin: 5px;
+  font-size: 30px;
+}
+
+.resources{
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  height: 17em;
+  width: 30.33333%;
+  margin-left: 1em;
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: #2c3441;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+
+.resources-div{
+  border-top:solid 10px #d44530;
+  background-color: white;
+  border-radius: 0px 0px 25px 25px;
+  height: 13em;
+}
+
+.resources-title{
+  margin: 5px;
+  font-size: 30px;
+}
+
+
+
+
+
+.calendar{
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  height: 17em;
+  width: 46%;
+  margin-left: 2em;
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: #2c3441;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+
+.calendar-div{
+  border-top:solid 10px #d44530;
+  background-color: white;
+  border-radius: 0px 0px 25px 25px;
+  height: 13em;
+}
+
+.calendar-title{
+  margin: 5px;
+  font-size: 30px;
+}
+
+
+
+.contact{
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
+  display: inline-block;
+  height: 17em;
+  width: 46%;
+  margin-left: 2em;
+  border: 2px solid black;
+  border-radius: 25px;
+  background-color: #2c3441;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+}
+
+.contact-div{
+  border-top:solid 10px #d44530;
+  background-color: white;
+  border-radius: 0px 0px 25px 25px;
+  height: 13em;
+}
+
+.contact-title{
+  margin: 5px;
+  font-size: 30px;
+}
+
+
+
+
+a {
+ color: white;
+ text-align: center;
+}
+
+/******************
+     Login
+*******************/
+#login{
+    height: 30em;
+    width: 40em;
+    margin-left: 28%;
+    margin-top: 8%;
+    padding: 2em;
+    margin-bottom: 2%;
+    background-color: grey;
+    border: solid 5px #78a7b2;
+}
+
+.btn, .btn-large, .btn-flat{
+  width: 100%;
+  display: block!important;
+}
+.div-container{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url('/Users/kevinbaxter/WOSDash/public/img/wos-student.jpg');
+}
+/******************
+    Registration
+*******************/
+
+#registration{
+      height: 43em;
+      width: 40em;
+      margin-left: 5%;
+      padding: 1em;
+      margin-bottom: 2%;
+      background-color: grey;
+      border: solid 5px #78a7b2;
+      color:white;
+
+}
+.body{
+  height:49em;
+  padding-top: 1.5em;
+  background-position: 8px 8px;
+  background-position: center;
+  background-image: url('/Users/kevinbaxter/WOSDash/public/img/Art_Langer.jpeg');
+}
+
+
+
+
+
+
+/*footer*/
+.page-footer{
+  height: 5em;
+  background-color: #78a7b2;
+  color: white;
+}
+
+
+.timepicker {
+  margin-bottom: 10px;
+}
+
+.log {
+  max-width: 200px;
+}
+
+.time-numbers {
+  max-width: 200px;
+}
+
+.well {
+  color: black;
+  max-width: 480px;
+}
+
+.modal-header {
+  color: black;
+}

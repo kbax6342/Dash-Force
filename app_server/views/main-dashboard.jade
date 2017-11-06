@@ -1,0 +1,139 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title DashForce
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(rel='stylesheet', href='stylesheets/style.css')
+    link(rel='stylesheet', href='bower_components/dependencies/angular-timetracker/css/style.css')
+    link(rel='stylesheet', href='bower_components/bootstrap/dist/css/bootstrap.css')
+    link(href='https://fonts.googleapis.com/css?family=Goblin+One', rel='stylesheet')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+  body(xng-app='app')
+    nav(style='height: 8em!important;')
+      .nav-wrapper
+        a.brand-logo(href='')
+          img#wos-logo(src ='/app_server/views/WOS_Logo_Transparent.png')
+        // Trigger the modal with a button
+        button#time-sheet-button.btn.btn-info.btn-lg(type='button', name='Clock Out', data-toggle='modal', data-target='#myModal') Time Sheet
+        // Modal
+        #myModal.modal.fade(role='dialog', ng-app='timeTracker', xng-controller='TimeEntry as vm')
+          .modal-dialog
+            // Modal content
+            .modal-content
+              .modal-header
+                button.close(type='button', data-dismiss='modal') ×
+                h4.modal-title Track Your Time!
+              .modal-body
+                .navbar.navbar-default
+                  .container-fluid
+                    .navbar-header
+                      a.navbar-brand(href='/') Time Tracker
+                .container.time-entry.well
+                  .timepicker
+                    span.timepicker-title.label.label-primary Clock In
+                    timepicker(ng-model='vm.clockIn', hour-step='1', minute-step='1', show-meridian='true')
+                  .timepicker
+                    span.timepicker-title.label.label-primary Clock Out
+                    timepicker(ng-model='vm.clockOut', hour-step='1', minute-step='1', show-meridian='true')
+                  .time-entry-comment
+                    form.navbar-form
+                      input.form-control(ng-model='vm.comment', placeholder='Enter a comment')
+                      button.btn.btn-primary.log(ng-click='vm.logNewTime()') Log Time
+                .container
+                  .col-sm-8
+                    .well.vm(ng-repeat='time in vm.timeentries')
+                      .row
+                        .col-sm-8
+                          h4
+                            i.glyphicon.glyphicon-user
+                            | #{firstName} #{lastName}
+                          p
+                            i.glyphicon.glyphicon-pencil
+                            |  #{comment}
+                        .col-sm-4.time-numbers
+                          h4
+                            i.glyphicon.glyphicon-calendar
+                            |  #{endTime}
+                          h2
+                            span.label.label-primary(ng-show='time.loggedTime.duration._data.hours > 0')
+                              | #{totalHours} hour
+                              span(ng-show='time.loggedTime.duration._data.hours > 1') s
+                          h4
+                            span.label.label-default #{hours} minutes
+                  .col-sm-4
+                    .well.time-numbers
+                      h1
+                        i.glyphicon.glyphicon-time
+                        |  Total Time
+                      h1
+                        span.label.label-primary {{vm.totalTime.hours}} hours
+                      h3
+                        span.label.label-default {{vm.totalTime.minutes}} minutes
+              .modal-footer
+                button.btn.btn-default(type='button', data-dismiss='modal') Close
+        a(href='/')
+          button#log-out-button.btn.btn-info.btn-lg(type='button', name='Log Out')  Log Out
+    .main-dashboard(ng-controller='MyController')
+      #row-1.row
+        .col.s12
+          a.announcements(href='/announcements.view.html')
+            div
+              p.announcements-title Announcements
+              .announcements-div(style='background-color:white;')
+                ul(style='color:black;')
+                  li Make static
+                  li Page
+                .progress
+                  .progress-bar.progress-bar-striped.active(role='progressbar', aria-valuenow='40', aria-valuemin='0', aria-valuemax='100', style='width:40%')
+                    | 40%
+          a.student(href='/Users/kevinbaxter/WOSDash/public/dashboard-pages/student.view.html')
+            div
+              p.student-title Student
+              .students-div(style='background-color:white;')
+                p(style='text-align:center; font-size:28px; color:black;') Welcome, #{username}
+                p
+          a(href='/Users/kevinbaxter/WOSDash/public/dashboard-pages/resources.view.html')
+            .resources
+              p.resources-title Resources
+              .resources-div(style='background-color:white;')
+                ul(style='color:black;')
+                  li Make Static
+                  li Page
+      #row-2
+        .col.s12
+          a(href='/Users/kevinbaxter/WOSDash/public/dashboard-pages/calendar.view.html')
+            .calendar
+              p.calendar-title Calendar
+              .calendar-div(style='background-color:white;')
+                ul(style='color:black;')
+                  li Just add
+                  li Image of Calendar
+          a(href='/Users/kevinbaxter/WOSDash/public/dashboard-pages/contact.view.html')
+            .contact
+              p.contact-title Contact
+              .contact-div(style='background-color:white;')
+                ul(style='color:black;')
+                  li Recent Updates
+                  li Breaking News
+    footer.page-footer
+      .container
+        .row
+          .col.l6.s12
+            h4 @copyright WOS 2017
+    script(type='text/javascript', src='bower_components/jquery/dist/jquery.js')
+    script(type='text/javascript', src='bower_components/bootstrap/dist/js/bootstrap.js')
+    script(type='text/javascript', src='bower_components/angular/angular.js')
+    script(type='text/javascript', src='bower_components/angular-bootstrap/ui-bootstrap.js')
+    script(type='text/javascript', src='bower_components/angular-bootstrap/ui-bootstrap-tpls.js')
+    script(type='text/javascript', src='bower_components/angular-resource/angular-resource.js')
+    script(type='text/javascript', src='bower_components/moment/moment.js')
+    // Application Scripts
+    script(type='text/javascript', src='bower_components/dependencies/angular-timetracker/scripts/app.js')
+    script(type='text/javascript', src='bower_components/dependencies/angular-timetracker/scripts/controllers/TimeEntry.js')
+    script(type='text/javascript', src='bower_components/dependencies/angular-timetracker/scripts/services/time.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js')

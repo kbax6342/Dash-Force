@@ -1,0 +1,64 @@
+doctype html
+html(ng-app='ngApp')
+  head
+    meta(charset='utf-8')
+    title DashForce
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(rel='stylesheet', href='stylesheets/style.css')
+    link(href='https://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet')
+  body#body(ng-controller='RegisterController')
+    nav(style='height: 7em!important;')
+      .nav-wrapper
+        a.brand-logo(href='http://www.wforce.org/')
+          img#wos-logo(src='./public/img/WOS Logo_Transparent.png', alt='WOS Logo')
+    .body
+      #registration.col-md-6.col-md-offset-3
+        h2(style='text-align:center; color:white; border-bottom: solid 2px white;\
+        padding-bottom: 0.5em; margin-top: 0px;') Register
+        form(action='/register' method='post' name='form', ng-submit='vm.register()', role='form')
+          .form-group(ng-class="{ 'has-error': form.firstName.$dirty && form.firstName.$error.required }")
+            label(style='color:white; font-size: 20px;', for='username') First name:
+            input#firstName.form-control(type='text', name='firstName', ng-model='vm.user.firstName', required='')
+            // <span ng-show="form.firstName.$dirty && form.firstName.$error.required" class="help-block">First name is required</span>
+          .form-group(ng-class="{ 'has-error': form.lastName.$dirty && form.lastName.$error.required }")
+            label(style='color:white; font-size: 20px;', for='username') Last name:
+            input#Text1.form-control(type='text', name='lastName', ng-model='vm.user.lastName', required='')
+            // <span ng-show="form.lastName.$dirty && form.lastName.$error.required" class="help-block">Last name is required</span>
+          .form-group(ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }")
+            label(style='color:white; font-size: 20px;', for='email') Email:
+            input#email.form-control(type='text', name='email', ng-model='vm.user.username', required='')
+            // <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Email is required</span>
+          .form-group(ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }")
+            label(style='color:white; font-size: 20px;', for='password') Password:
+            input#password.form-control(type='password', name='password', ng-model='vm.user.password', required='')
+            // <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+          .form-actions
+            button.btn.btn-primary(type='submit', ng-disabled='form.$invalid || vm.dataLoading') Register
+            // <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            a.btn.btn-link(href='/') Cancel
+          p(style='color:white; text-align: center;')
+            i.material-icons(style='font-size:15px; color:#78a7b2') new_releases
+            |  = required input
+    //
+      <footer class="page-footer">
+      <div class="container">
+      <div class="row">
+      <div class="col l6 s12">
+      </div>
+      </div>
+      </div>
+      <div class="footer-copyright">
+      <div class="container">
+      © 2014 Copyright Text
+      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      </div>
+      </div>
+      </footer>
+    script(src='https://code.jquery.com/jquery-3.2.1.js', integrity='sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular-route.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0/angular-cookies.min.js')
+    script(type='text/javascript', src='/Users/kevinbaxter/WOSDash/public/javascripts/registration-controller.js')
+    script(type='text/javascript', src='/Users/kevinbaxter/WOSDash/public/javascripts/app.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js')
